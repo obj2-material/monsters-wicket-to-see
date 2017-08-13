@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Info de una banda</title>
+</head>
+<body>
+	<div class="row">
+	
+		<!-- Info sobre la banda elegida -->
+		<div class="col-sm-8">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+				  		<div class="col-sm-4" style="font-weight: bold">
+							Nombre
+						</div>
+						<div class="col-sm-8">
+							<div wicket:id="nombre"></div>
+						</div>
+					</div><!-- /.row -->
+					<div class="row">
+				  		<div class="col-sm-4" style="font-weight: bold">
+							País
+						</div>
+						<div class="col-sm-8">
+							<div wicket:id="pais"></div>
+						</div>
+					</div><!-- /.row -->
+					<div class="row">
+				  		<div class="col-sm-4" style="font-weight: bold">
+							Género
+						</div>
+						<div class="col-sm-8">
+							<div wicket:id="genero"></div>
+						</div>
+					</div><!-- /.row -->
+					<div class="row">
+				  		<div class="col-sm-4" style="font-weight: bold">
+							Copias vendidas (total)
+						</div>
+						<div class="col-sm-8">
+							<div wicket:id="copiasVendidas"></div>
+						</div>
+					</div><!-- /.row -->
+				</div>
+			</div>   <!--  /panel  -->
+		</div>   <!--  /col-sm-8  -->
+		
+		<!-- Selector de banda -->
+		<div class="col-sm-4">
+			<div class="row">
+				<a href="#" wicket:id="chooseSoda">Soda Stereo</a>
+			</div>
+			<div class="row">
+				<a href="#" wicket:id="chooseVirus">Virus</a>
+			</div>
+			<div class="row">
+				<a href="#" wicket:id="chooseMolotov">Molotov</a>
+			</div>
+		</div>
+	</div>   <!--  /row  -->
+
+	<div class="row">
+		<!-- Discos de la banda elegida -->
+		<div class="col-sm-6">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Año</th>
+						<th>Copias totales</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="discos">
+						<td><a href="#" wicket:id="nombre"></a></td>
+						<td><span wicket:id="anio"></span></td>
+						<td><span wicket:id="copiasVendidas"></span></td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>   <!--  /col-sm-6  -->
+		
+		<!-- Información del disco elegido -->
+		<div class="col-sm-4" wicket:id="infoDiscoElegido">
+		</div>
+	</div>   <!--  /row  -->
+			
+</body>
+</html>

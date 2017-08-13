@@ -3,6 +3,7 @@ package ar.edu.unq.ciu.monsters.web;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
 
+import ar.edu.unq.ciu.monsters.web.bandPageWithAlbums.BandPageWithAlbums;
 import ar.edu.unq.ciu.monsters.web.simpleBandPage.SimpleBandPage;
 
 public class InitialMenu extends WebPage {
@@ -16,6 +17,14 @@ public class InitialMenu extends WebPage {
 			@Override
 			public void onClick() {
 				this.setResponsePage(SimpleBandPage.class);
+			}
+		});
+		this.add(new Link<String>("bandPageWithAlbums") {
+			private static final long serialVersionUID = -3690151360490159036L;
+
+			@Override
+			public void onClick() {
+				this.setResponsePage(BandPageWithAlbums.class);
 			}
 		});
 	}
