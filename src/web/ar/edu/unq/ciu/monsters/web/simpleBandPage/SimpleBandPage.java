@@ -23,7 +23,7 @@ public class SimpleBandPage extends WebPage {
 	protected void fillBandFile() {
 		this.add(new Label("nombre", new PropertyModel<>(this.controller, "chosenBand.nombre")));
 		// en Arena:
-		// 		new Label(panel).bindValueToProperty("bandaElegida.nombre");
+		// 		new Label(panel).bindValueToProperty("chosenBand.nombre");
 		// (suponiendo que el controller sea el modelo del panel)
 		this.add(new Label("pais", new PropertyModel<>(this.controller, "chosenBand.pais.nombre")));
 		this.add(new Label("genero", new PropertyModel<>(this.controller, "chosenBand.genero")));
@@ -47,6 +47,15 @@ public class SimpleBandPage extends WebPage {
 			@Override
 			public void onClick() {
 				SimpleBandPage.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Virus"));
+			}
+		});
+
+		this.add(new Link<String>("chooseMolotov") {
+			private static final long serialVersionUID = 1122141821886909322L;
+
+			@Override
+			public void onClick() {
+				SimpleBandPage.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Molotov"));
 			}
 		});
 	}

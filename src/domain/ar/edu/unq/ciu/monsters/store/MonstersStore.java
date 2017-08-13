@@ -57,6 +57,7 @@ public class MonstersStore implements Serializable {
 		Disco locura = new Disco("Locura", 1985);
 		Disco divididosPorLaFelicidad = new Disco("Divididos por la Felicidad", 1985);
 		Disco afterChabon= new Disco("After Chabon", 1985);
+		Disco donde= new Disco("Donde jugarán las niñas", 1997);
 
 		Banda soda = new Banda("Soda Stereo", argentina, "pop", 150000);
 		Banda seru = new Banda("Serú Girán", argentina, "rock", 42000);
@@ -99,7 +100,11 @@ public class MonstersStore implements Serializable {
 		this.addToPaises(argentina); this.addToPaises(uruguay);
 		this.addToPaises(espania); this.addToPaises(chile);
 		this.addToPaises(mexico);
-		
+
+		donde.setCopiasEnPais(espania, 4000);
+		donde.setCopiasEnPais(mexico, 30000);
+		molotov.addToDiscos(donde);
+
 		this.addToBandas(soda); this.addToBandas(seru); this.addToBandas(virus);
 		this.addToBandas(sumo); this.addToBandas(divididos); this.addToBandas(molotov);
 		
