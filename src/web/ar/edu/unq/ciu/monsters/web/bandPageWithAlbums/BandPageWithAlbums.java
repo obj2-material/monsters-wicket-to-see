@@ -69,19 +69,20 @@ public class BandPageWithAlbums extends WebPage {
 
 			@Override
 			protected void populateItem(ListItem<Disco> panel) {
+				Disco elDisco = panel.getModelObject();
 				final Link<String> nombreLink = new Link<String>("nombre") {
 					private static final long serialVersionUID = -5776431313490694323L;
-
+					
 					@Override
 					public void onClick() {
-						BandPageWithAlbums.this.controller.setChosenAlbum(panel.getModelObject());
+						BandPageWithAlbums.this.controller.setChosenAlbum(elDisco);
 					}
 				};
-				nombreLink.setBody(new PropertyModel<>(panel.getModelObject(), "nombre"));
+				nombreLink.setBody(new PropertyModel<>(elDisco, "nombre"));
 				panel.add(nombreLink);
 
-				panel.add(new Label("anio", new PropertyModel<>(panel.getModelObject(), "anio")));
-				panel.add(new Label("copiasVendidas", new PropertyModel<>(panel.getModelObject(), "totalCopiasVendidas")));				
+				panel.add(new Label("anio", new PropertyModel<>(elDisco, "anio")));
+				panel.add(new Label("copiasVendidas", new PropertyModel<>(elDisco, "totalCopiasVendidas")));				
 			}
 		});
 	}
