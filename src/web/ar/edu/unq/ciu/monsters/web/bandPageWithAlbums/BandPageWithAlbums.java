@@ -28,6 +28,7 @@ public class BandPageWithAlbums extends WebPage {
 	protected void fillBandFile() {
 		this.add(new Label("nombre", new PropertyModel<>(this.controller, "chosenBand.nombre")));
 		this.add(new Label("pais", new PropertyModel<>(this.controller, "chosenBand.pais.nombre")));
+		//                                                              this.controller.getChosenBand().getPais().getNombre()
 		this.add(new Label("genero", new PropertyModel<>(this.controller, "chosenBand.genero")));
 		this.add(new Label("copiasVendidas", new PropertyModel<>(this.controller, "chosenBand.totalCopiasVendidas")));
 	}
@@ -64,7 +65,7 @@ public class BandPageWithAlbums extends WebPage {
 
 	
 	protected void fillAlbumList() {
-		this.add(new ListView<Disco>("discos", new PropertyModel<>(this.controller, "chosenBand.discos")) {
+		this.add(new ListView<Disco>("discos", new PropertyModel<>(this.controller, "albumsToShow")) {
 			private static final long serialVersionUID = -4547597546545617797L;
 
 			@Override

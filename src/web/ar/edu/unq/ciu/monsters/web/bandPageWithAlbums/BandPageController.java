@@ -1,6 +1,7 @@
 package ar.edu.unq.ciu.monsters.web.bandPageWithAlbums;
 
 import java.io.Serializable;
+import java.util.List;
 
 import ar.edu.unq.ciu.monsters.dominio.Banda;
 import ar.edu.unq.ciu.monsters.dominio.Disco;
@@ -21,4 +22,8 @@ public class BandPageController implements Serializable {
 		this.chosenAlbum = album;
 	}
 	public boolean hasChosenAlbum() { return this.chosenAlbum != null; }
+	
+	public List<Disco> getAlbumsToShow() {
+		return this.getChosenBand().getDiscos();
+	}
 }
