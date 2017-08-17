@@ -48,7 +48,11 @@ public class Festival extends EventoMultiBanda {
 	}
 	
 	public Collection<String> getGenerosIndicados() { return this.generosIndicados; }
-	public void addToGenerosIndicados(String genero) { this.generosIndicados.add(genero); }
+	public void addToGenerosIndicados(String...generos) {
+		for (String genero : generos) {
+			this.generosIndicados.add(genero);	
+		}		 
+	}
 
 	@Override
 	public boolean incluyeGenero(String genero) {
