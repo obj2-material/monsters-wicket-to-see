@@ -36,6 +36,7 @@ public class MonstersStore implements Serializable {
 	
 	public MonstersStore() {
 		this.fillData();
+		this.fillFestivales();
 	}
 	
 	@SuppressWarnings("unused")
