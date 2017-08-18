@@ -68,7 +68,7 @@ public class MonstersStore implements Serializable {
 		Disco locura = new Disco("Locura", 1985);
 		Disco divididosPorLaFelicidad = new Disco("Divididos por la Felicidad", 1985);
 		Disco afterChabon= new Disco("After Chabon", 1985);
-		Disco donde= new Disco("Donde jugarán las niñas", 1997);
+		Disco donde= new Disco("Dónde jugarán las niñas", 1997);
 		Disco magistral= new Disco("Magistral", 2011);
 
 		Banda soda = new Banda("Soda Stereo", argentina, "pop", 150000);
@@ -145,7 +145,7 @@ public class MonstersStore implements Serializable {
 		megaPopFest.addToBandas(this.getBandaLlamada("Miranda!"), this.getDiscoLlamado("Magistral"), 20);
 		
 		// quiero obtener la discografica que produjo Signos
-		Discografica azul = this.getDiscoLlamado("Signos").getProductor();
+		Discografica azul = this.getDiscoLlamado("Dynamo").getProductor();
 		Festival azulFest = new Festival("Vestido de azul");
 		azulFest.addToGenerosIndicados("pop", "rock", "reggae");
 		azulFest.setOrganizador(azul);
