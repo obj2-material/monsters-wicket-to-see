@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Esto no se deberia ver</title>
+</head>
+<body>
+	<p>Esta parte no se incluye, porque está afuera del tag wicket:panel</p>
+	
+	<wicket:panel>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<span wicket:id="nombreDiscoElegido"></span>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>País</th>
+								<th>Copias</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="copiasPorPais">
+								<td><span wicket:id="pais"></span></td>
+								<td><span wicket:id="cantidadCopias"></span></td>
+						    </tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<button type="button" class="btn btn-primary" wicket:id="addCopies">
+						Agregar copias
+					</button>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

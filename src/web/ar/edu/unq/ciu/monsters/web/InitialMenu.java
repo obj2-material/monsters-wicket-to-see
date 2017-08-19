@@ -4,6 +4,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
 
 import ar.edu.unq.ciu.monsters.web.bandPageWithAlbums.BandPageWithAlbums;
+import ar.edu.unq.ciu.monsters.web.bandsDiscsCopies.BandPageWithLinkToCopies;
 import ar.edu.unq.ciu.monsters.web.simpleBandPage.SimpleBandPage;
 
 public class InitialMenu extends WebPage {
@@ -20,11 +21,19 @@ public class InitialMenu extends WebPage {
 			}
 		});
 		this.add(new Link<String>("bandPageWithAlbums") {
-			private static final long serialVersionUID = -3690151360490159036L;
+			private static final long serialVersionUID = -5714398010396372891L;
 
 			@Override
 			public void onClick() {
 				this.setResponsePage(BandPageWithAlbums.class);
+			}
+		});
+		this.add(new Link<String>("bandsDiscsCopies") {
+			private static final long serialVersionUID = 8622777156833620290L;
+
+			@Override
+			public void onClick() {
+				this.setResponsePage(BandPageWithLinkToCopies.class);
 			}
 		});
 	}

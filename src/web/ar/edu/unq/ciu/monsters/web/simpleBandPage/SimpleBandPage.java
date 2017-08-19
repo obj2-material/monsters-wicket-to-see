@@ -13,6 +13,7 @@ public class SimpleBandPage extends WebPage {
 	private SimpleBandPageController controller = new SimpleBandPageController();
 	
 	public SimpleBandPage() {
+		super();
 		this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
 		
 		this.fillBandFile();

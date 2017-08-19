@@ -1,4 +1,4 @@
-package ar.edu.unq.ciu.monsters.web.bandPageWithAlbums;
+package ar.edu.unq.ciu.monsters.web.bandsDiscsCopies;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
@@ -7,16 +7,16 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.PropertyModel;
 
+import ar.edu.unq.ciu.monsters.dominio.Banda;
 import ar.edu.unq.ciu.monsters.dominio.Disco;
 import ar.edu.unq.ciu.monsters.store.MonstersStore;
 
-public class BandPageWithAlbums extends WebPage {
+public class BandPageWithLinkToCopies extends WebPage {
 	private static final long serialVersionUID = -5617749468806067306L;
 
 	private BandPageController controller = new BandPageController();
 	
-	public BandPageWithAlbums() {
-		super();
+	public BandPageWithLinkToCopies() {
 		this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
 		
 		this.fillBandFile();
@@ -25,11 +25,15 @@ public class BandPageWithAlbums extends WebPage {
 		this.add(new AlbumPanel("infoDiscoElegido", this.controller));
 	}
 
+	public BandPageWithLinkToCopies(Banda band, Disco album) {
+		this();
+		this.controller.setChosenBand(band);
+		this.controller.setChosenAlbum(album);
+	}
 
 	protected void fillBandFile() {
 		this.add(new Label("nombre", new PropertyModel<>(this.controller, "chosenBand.nombre")));
 		this.add(new Label("pais", new PropertyModel<>(this.controller, "chosenBand.pais.nombre")));
-		//                                                              this.controller.getChosenBand().getPais().getNombre()
 		this.add(new Label("genero", new PropertyModel<>(this.controller, "chosenBand.genero")));
 		this.add(new Label("copiasVendidas", new PropertyModel<>(this.controller, "chosenBand.totalCopiasVendidas")));
 	}
@@ -41,7 +45,7 @@ public class BandPageWithAlbums extends WebPage {
 
 			@Override
 			public void onClick() {
-				BandPageWithAlbums.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
+				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
 			}
 		});
 
@@ -50,7 +54,7 @@ public class BandPageWithAlbums extends WebPage {
 
 			@Override
 			public void onClick() {
-				BandPageWithAlbums.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Virus"));
+				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Virus"));
 			}
 		});
 
@@ -59,7 +63,7 @@ public class BandPageWithAlbums extends WebPage {
 
 			@Override
 			public void onClick() {
-				BandPageWithAlbums.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Molotov"));
+				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Molotov"));
 			}
 		});
 	}
@@ -77,7 +81,7 @@ public class BandPageWithAlbums extends WebPage {
 					
 					@Override
 					public void onClick() {
-						BandPageWithAlbums.this.controller.setChosenAlbum(elDisco);
+						BandPageWithLinkToCopies.this.controller.setChosenAlbum(elDisco);
 					}
 				};
 				nombreLink.setBody(new PropertyModel<>(elDisco, "nombre"));
