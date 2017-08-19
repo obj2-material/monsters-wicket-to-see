@@ -25,7 +25,7 @@ public class CopiesFormPage extends WebPage {
 
 	public Form<CopiasVendidas> buildForm() {
 		Form<CopiasVendidas> newForm = new Form<CopiasVendidas>("addCopiesForm") {
-			private static final long serialVersionUID = 378247450146809068L;
+			private static final long serialVersionUID = 9176124418022888414L;
 
 			@Override
 			protected void onSubmit() {
@@ -38,12 +38,12 @@ public class CopiesFormPage extends WebPage {
 			
 		};
 		newForm.add(new DropDownChoice<>(
-				"pais", 
-				new PropertyModel<>(this.controller, "pais"), 
+				"country", 
+				new PropertyModel<>(this.controller, "country"), 
 				new PropertyModel<>(MonstersStore.store(), "paisesOrdenados"), 
 				new ChoiceRenderer<>("nombre")
 		));
-		newForm.add(new TextField<>("cantidadCopias", new PropertyModel<>(this.controller, "copias")));
+		newForm.add(new TextField<>("copyCount", new PropertyModel<>(this.controller, "copiesToAdd")));
 		return newForm;
 	}
 
