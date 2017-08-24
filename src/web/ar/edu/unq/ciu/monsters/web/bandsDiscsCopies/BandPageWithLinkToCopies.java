@@ -22,7 +22,7 @@ public class BandPageWithLinkToCopies extends WebPage {
 		this.fillBandFile();
 		this.fillBandSelectionLinks();
 		this.fillAlbumList();
-		this.add(new AlbumPanel("infoDiscoElegido", this.controller));
+		this.add(new AlbumPanelWithLink("infoDiscoElegido", this.controller));
 	}
 
 	public BandPageWithLinkToCopies(Banda band, Disco album) {

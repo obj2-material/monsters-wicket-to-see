@@ -9,12 +9,12 @@ import org.apache.wicket.model.PropertyModel;
 
 import ar.edu.unq.ciu.monsters.dominio.CopiasVendidas;
 
-public class AlbumPanel extends Panel {
+public class AlbumPanelWithLink extends Panel {
 	private static final long serialVersionUID = 6005102500922455262L;
 
 	private BandPageController controller;
 	
-	public AlbumPanel(String id, BandPageController pageController) {
+	public AlbumPanelWithLink(String id, BandPageController pageController) {
 		super(id);
 		this.controller = pageController;
 
@@ -36,8 +36,8 @@ public class AlbumPanel extends Panel {
 			@Override
 			public void onClick() {
 				this.setResponsePage(new CopiesFormPage(
-						AlbumPanel.this.controller.getChosenBand(), 
-						AlbumPanel.this.controller.getChosenAlbum()
+						AlbumPanelWithLink.this.controller.getChosenBand(), 
+						AlbumPanelWithLink.this.controller.getChosenAlbum()
 				));
 			}
 		};
