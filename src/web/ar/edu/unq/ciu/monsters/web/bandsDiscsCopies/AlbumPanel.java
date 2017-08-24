@@ -1,7 +1,6 @@
 package ar.edu.unq.ciu.monsters.web.bandsDiscsCopies;
 
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
@@ -9,7 +8,6 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.PropertyModel;
 
 import ar.edu.unq.ciu.monsters.dominio.CopiasVendidas;
-import ar.edu.unq.ciu.monsters.web.bandsDiscsCopies.CopiesFormPage;
 
 public class AlbumPanel extends Panel {
 	private static final long serialVersionUID = 6005102500922455262L;

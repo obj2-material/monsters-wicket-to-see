@@ -40,30 +40,22 @@ public class BandPageWithLinkToCopies extends WebPage {
 
 
 	protected void fillBandSelectionLinks() {
-		this.add(new Link<String>("chooseSoda") {
-			private static final long serialVersionUID = -7850955536756349914L;
+		this.add(new ListView<Banda>("bandSelector", new PropertyModel<>(this.controller, "bandsToShow")) {
+			private static final long serialVersionUID = -4547597546545617797L;
 
 			@Override
-			public void onClick() {
-				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
-			}
-		});
-
-		this.add(new Link<String>("chooseVirus") {
-			private static final long serialVersionUID = -963918703168170592L;
-
-			@Override
-			public void onClick() {
-				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Virus"));
-			}
-		});
-
-		this.add(new Link<String>("chooseMolotov") {
-			private static final long serialVersionUID = 1122141821886909322L;
-
-			@Override
-			public void onClick() {
-				BandPageWithLinkToCopies.this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Molotov"));
+			protected void populateItem(ListItem<Banda> panel) {
+				Banda theBand = panel.getModelObject();
+				final Link<String> chooseBandLink = new Link<String>("chooseBand") {
+					private static final long serialVersionUID = -5776431313490694323L;
+					
+					@Override
+					public void onClick() {
+						BandPageWithLinkToCopies.this.controller.setChosenBand(theBand);
+					}
+				};
+				chooseBandLink.setBody(new PropertyModel<>(theBand, "nombre"));
+				panel.add(chooseBandLink);
 			}
 		});
 	}
