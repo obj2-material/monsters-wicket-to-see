@@ -8,7 +8,6 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.PropertyModel;
 
 import ar.edu.unq.ciu.monsters.dominio.Banda;
-import ar.edu.unq.ciu.monsters.dominio.CopiasVendidas;
 import ar.edu.unq.ciu.monsters.dominio.Disco;
 import ar.edu.unq.ciu.monsters.store.MonstersStore;
 
@@ -23,13 +22,15 @@ public class CopiesFormPage extends WebPage {
 		this.add(this.buildForm());
 	}
 
-	public Form<CopiasVendidas> buildForm() {
-		Form<CopiasVendidas> newForm = new Form<CopiasVendidas>("addCopiesForm") {
+	public Form<CopiesFormController> buildForm() {
+		Form<CopiesFormController> newForm = new Form<CopiesFormController>("addCopiesForm") {
 			private static final long serialVersionUID = 9176124418022888414L;
 
 			@Override
 			protected void onSubmit() {
+				// acción de dominio
 				CopiesFormPage.this.controller.doAddCopies();
+				// navegación
 				this.setResponsePage(new BandPageWithLinkToCopies(
 						CopiesFormPage.this.controller.getBand(),
 						CopiesFormPage.this.controller.getAlbum()
@@ -38,10 +39,14 @@ public class CopiesFormPage extends WebPage {
 			
 		};
 		newForm.add(new DropDownChoice<>(
-				"country", 
-				new PropertyModel<>(this.controller, "country"), 
-				new PropertyModel<>(MonstersStore.store(), "paisesOrdenados"), 
-				new ChoiceRenderer<>("nombre")
+				// id
+				"country", 		
+				// binding del campo, acá va a ir la opción seleccionada
+				new PropertyModel<>(this.controller, "country"),
+				// binding de la lista de items
+				new PropertyModel<>(MonstersStore.store(), "paisesOrdenados"),
+				// qué se muestra de cada item
+				new ChoiceRenderer<>("nombre") 
 		));
 		newForm.add(new TextField<>("copyCount", new PropertyModel<>(this.controller, "copiesToAdd")));
 		return newForm;

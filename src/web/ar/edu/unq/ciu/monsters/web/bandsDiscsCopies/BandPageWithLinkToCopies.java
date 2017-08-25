@@ -16,6 +16,7 @@ public class BandPageWithLinkToCopies extends WebPage {
 
 	private BandPageController controller = new BandPageController();
 	
+	// constructor sin parámetros
 	public BandPageWithLinkToCopies() {
 		this.controller.setChosenBand(MonstersStore.store().getBandaLlamada("Soda Stereo"));
 		
@@ -25,12 +26,15 @@ public class BandPageWithLinkToCopies extends WebPage {
 		this.add(new AlbumPanelWithLink("infoDiscoElegido", this.controller));
 	}
 
+	// constructor con dos parámetros
 	public BandPageWithLinkToCopies(Banda band, Disco album) {
+		// invoca al constructor sin parámetros ...
 		this();
+		// ... y después setea el controlador
 		this.controller.setChosenBand(band);
 		this.controller.setChosenAlbum(album);
 	}
-
+	
 	protected void fillBandFile() {
 		this.add(new Label("nombre", new PropertyModel<>(this.controller, "chosenBand.nombre")));
 		this.add(new Label("pais", new PropertyModel<>(this.controller, "chosenBand.pais.nombre")));
