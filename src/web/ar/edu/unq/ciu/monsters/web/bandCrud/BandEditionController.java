@@ -20,7 +20,7 @@ public class BandEditionController implements Serializable {
 	public BandEditionController() { 
 		this.albums = new ArrayList<>();
 		Discografica randomCompany = MonstersStore.store().getDiscograficas().iterator().next();
-		this.addToAlbums(new AlbumEditionController("penales", randomCompany, 2004, 32000));
+		this.addToAlbums(new AlbumEditionController(this, "penales", randomCompany, 2004, 32000));
 	}
 
 	public String getName() { return this.name; }
