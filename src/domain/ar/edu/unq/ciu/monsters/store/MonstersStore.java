@@ -58,8 +58,8 @@ public class MonstersStore implements Serializable {
 		Ciudad montevideo = new Ciudad("Montevideo", uruguay);
 		Ciudad sevilla = new Ciudad("Sevilla", espania);
 
-		Discografica emi = new Discografica();
-		Discografica azul = new Discografica();
+		Discografica emi = new Discografica(); emi.setNombre("EMI");
+		Discografica azul = new Discografica(); azul.setNombre("Discos Azul");
 
 		Disco signos = new Disco("Signos", 1986);  
 		Disco dynamo = new Disco("Dynamo", 1992);

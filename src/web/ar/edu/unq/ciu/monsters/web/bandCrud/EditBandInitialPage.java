@@ -26,7 +26,7 @@ public class EditBandInitialPage extends WebPage {
 			private static final long serialVersionUID = -7380319985557184605L;
 			@Override
 			protected void onSubmit() {
-				this.setResponsePage(new EditBandDiscsPage(EditBandInitialPage.this.controller));
+				this.setResponsePage(new EditBandAlbumsPage(EditBandInitialPage.this.controller));
 			}
 		};
 		

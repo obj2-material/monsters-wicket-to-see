@@ -2,9 +2,10 @@ package ar.edu.unq.ciu.monsters.dominio;
 
 import java.io.Serializable;
 
+import ar.edu.unq.ciu.monsters.dominio.basicos.ConNombre;
 import ar.edu.unq.ciu.monsters.evento.ParticipacionEnEvento;
 
-public class Discografica implements OrganizadorDeEvento, Serializable {
+public class Discografica extends ConNombre implements OrganizadorDeEvento, Serializable {
 
 	private static final long serialVersionUID = -4477090980686410640L;
 
