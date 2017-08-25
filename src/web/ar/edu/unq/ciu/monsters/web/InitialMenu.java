@@ -3,6 +3,7 @@ package ar.edu.unq.ciu.monsters.web;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
 
+import ar.edu.unq.ciu.monsters.web.bandCrud.BandListPage;
 import ar.edu.unq.ciu.monsters.web.bandPageWithAlbums.BandPageWithAlbums;
 import ar.edu.unq.ciu.monsters.web.bandsDiscsCopies.BandPageWithLinkToCopies;
 import ar.edu.unq.ciu.monsters.web.simpleBandPage.SimpleBandPage;
@@ -34,6 +35,14 @@ public class InitialMenu extends WebPage {
 			@Override
 			public void onClick() {
 				this.setResponsePage(BandPageWithLinkToCopies.class);
+			}
+		});
+		this.add(new Link<String>("bandCrud") {
+			private static final long serialVersionUID = 3805388359507614302L;
+
+			@Override
+			public void onClick() {
+				this.setResponsePage(BandListPage.class);
 			}
 		});
 	}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Bandas</title>
+</head>
+<body>
+	<div class="panel panel-default col-sm-10 col-sm-offset-1">
+		<div class="panel-body">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Género</th>
+						<th>País</th>
+						<th>Cachet</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="bands">
+						<td><span wicket:id="name"></span></td>
+						<td><span wicket:id="musicalGenre"></span></td>
+						<td><span wicket:id="country"></span></td>
+						<td><span wicket:id="cachet"></span></td>
+				    </tr>
+				</tbody>
+			</table>
+			
+			<div class="btn-group" role="group">
+				<button type="button" class="btn btn-primary" wicket:id="addBand">
+					Agregar banda
+				</button>
+			</div>
+		</div>
+	</div>   <!--  /panel  -->			
+</body>
+</html>
