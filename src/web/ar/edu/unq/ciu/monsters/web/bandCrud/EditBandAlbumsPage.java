@@ -19,6 +19,7 @@ public class EditBandAlbumsPage extends WebPage {
 		this.fillMainData();
 		this.fillAlbumTable();
 		this.fillAddAlbumButton();
+		this.fillOkCancelButtons();
 	}
 
 	protected void fillMainData() {
@@ -57,5 +58,32 @@ public class EditBandAlbumsPage extends WebPage {
 		}; 
 		this.add(addBandAction);
 	}
+
+	protected void fillOkCancelButtons() {
+		Link<String> cancelAction = new Link<String>("cancelAction") {
+			private static final long serialVersionUID = 3251048626635072477L;
+
+			@Override
+			public void onClick() {
+				this.setResponsePage(new EditBandInitialPage(EditBandAlbumsPage.this.controller));
+				
+			}
+		}; 
+		this.add(cancelAction);
+
+		Link<String> confirmAction = new Link<String>("doAddBand") {
+			private static final long serialVersionUID = 6693007657356760682L;
+
+			@Override
+			public void onClick() {
+				EditBandAlbumsPage.this.controller.doAddBand();
+				this.setResponsePage(BandListPage.class);
+				
+			}
+		}; 
+		this.add(confirmAction);
+
+	}
+
 
 }

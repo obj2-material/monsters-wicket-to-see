@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import ar.edu.unq.ciu.monsters.dominio.Disco;
 import ar.edu.unq.ciu.monsters.dominio.Discografica;
 import ar.edu.unq.ciu.monsters.store.MonstersStore;
 
@@ -55,6 +56,13 @@ public class AlbumEditionController implements Serializable {
 
 	public BandEditionController getParentController() {
 		return this.parentController;
+	}
+
+	public Disco buildAlbum() {
+		Disco newAlbum = new Disco(this.getName(), this.getYear());
+		newAlbum.setProductor(this.getCompany());
+		newAlbum.agregarCopias(MonstersStore.store().getPaisLlamado("Argentina"), this.getCopiesInArgentina());
+		return newAlbum;		
 	}	
 	
 }

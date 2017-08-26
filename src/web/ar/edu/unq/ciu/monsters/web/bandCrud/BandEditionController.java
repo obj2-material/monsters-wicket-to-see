@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unq.ciu.monsters.dominio.Banda;
 import ar.edu.unq.ciu.monsters.dominio.Discografica;
 import ar.edu.unq.ciu.monsters.dominio.Pais;
 import ar.edu.unq.ciu.monsters.store.MonstersStore;
@@ -19,8 +20,6 @@ public class BandEditionController implements Serializable {
 	
 	public BandEditionController() { 
 		this.albums = new ArrayList<>();
-		Discografica randomCompany = MonstersStore.store().getDiscograficas().iterator().next();
-		this.addToAlbums(new AlbumEditionController(this, "penales", randomCompany, 2004, 32000));
 	}
 
 	public String getName() { return this.name; }
@@ -40,6 +39,20 @@ public class BandEditionController implements Serializable {
 	
 	public List<Pais> getCountriesToShow() {
 		return MonstersStore.store().getPaisesOrdenados();
+	}
+
+	public void doAddBand() {
+		Banda newBand = this.buildBand();
+		for (AlbumEditionController albumController : this.albums) {
+			newBand.addToDiscos(albumController.buildAlbum());
+		}
+		MonstersStore.store().addToBandas(newBand);
+		
+		
+	}
+	
+	public Banda buildBand() {
+		return new Banda(this.getName(), this.getCountry(), this.getMusicalGenre(), this.getCachet());
 	}
 	
 	

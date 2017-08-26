@@ -20,6 +20,11 @@ public class EditBandInitialPage extends WebPage {
 		this.controller = new BandEditionController();
 		this.fillForm();
 	}
+	
+	public EditBandInitialPage(BandEditionController _controller) {
+		this();
+		this.controller = _controller;
+	}
 
 	protected void fillForm() {
 		Form<BandEditionController> bandMainDataForm = new Form<BandEditionController>("bandForm") {
