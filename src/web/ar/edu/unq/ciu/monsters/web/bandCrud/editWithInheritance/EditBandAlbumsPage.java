@@ -1,4 +1,4 @@
-package ar.edu.unq.ciu.monsters.web.bandCrud;
+package ar.edu.unq.ciu.monsters.web.bandCrud.editWithInheritance;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;

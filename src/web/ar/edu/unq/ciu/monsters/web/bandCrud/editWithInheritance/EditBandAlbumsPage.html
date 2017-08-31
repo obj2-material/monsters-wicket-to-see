@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Discos de la nueva banda</title>
+	<style>
+	span.titulo { font-weight: bold }
+	</style>
+</head>
+<body>
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4>Nueva banda - discos</h4>
+			</div>
+			<div class="panel-body">
+			
+				<!--  main band info  -->
+				<div class="panel panel-success">
+					<div class="panel-body">
+						<row>
+							<span class="titulo col-sm-2">Nombre</span>
+							<span class="col-sm-4" wicket:id="name"></span>
+							<span class="titulo col-sm-2">País</span>
+							<span class="col-sm-4" wicket:id="country"></span>
+						</row>
+						<row>
+							<span class="titulo col-sm-2">Cachet</span>
+							<span class="col-sm-4" wicket:id="cachet"></span>
+							<span class="titulo col-sm-2">Género musical</span>
+							<span class="col-sm-4" wicket:id="musicalGenre"></span>
+						</row>
+					</div>
+				</div>
+				
+				<!--  albums to add  -->
+				<div class="panel panel-success">
+					<div class="panel-body">
+						<div class="btn-toolbar" role="group" style="margin-bottom: 12px;">
+							<button type="button" class="btn btn-info" wicket:id="addAlbum">
+								Agregar disco
+							</button>
+						</div>
+
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Discográfica</th>
+									<th>Año</th>
+									<th>Copias en Argentina</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="albums">
+									<td><span wicket:id="name"></span></td>
+									<td><span wicket:id="company"></span></td>
+									<td><span wicket:id="year"></span></td>
+									<td><span wicket:id="copiesInArgentina"></span></td>
+							    </tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+
+				<!--  button bar  -->
+				<div class="btn-toolbar" role="group" style="float: right">
+					<button type="button" class="btn btn-standard" wicket:id="cancelAction">
+						Cancelar
+					</button>
+					<button type="button" class="btn btn-standard" style="background-color: #5bd778" wicket:id="doAddBand">
+						Agregar banda con sus discos
+					</button>
+				</div>
+
+				
+			</div>
+		</div>   <!--  /panel  -->			
+	</div>
+</body>
+</html>

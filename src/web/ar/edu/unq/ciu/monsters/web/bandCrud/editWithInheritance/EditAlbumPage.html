@@ -3,38 +3,36 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<title>Agregar una banda</title>
+	<title>Edición de disco</title>
 </head>
 <body>
 	<div class="col-sm-10 col-sm-offset-1">
-		<div class="panel panel-info">
-			<div class="panel-heading">
-				<h4>Nueva banda</h4>
-			</div>
+		<div class="panel panel-default col-sm-10 col-sm-offset-1">
 			<div class="panel-body">
-				<form class="form-horizontal" wicket:id="bandForm">
+
+				<form class="form-horizontal" wicket:id="albumForm">
 					<div class="form-group">
 						<label for="name" class="control-label col-sm-2">Nombre</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="name" wicket:id="name" placeholder="Nombre de la banda">
+							<input type="text" class="form-control" id="name" wicket:id="name" placeholder="Nombre del disco">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="country" class="control-label col-sm-2">País</label>
+						<label for="company" class="control-label col-sm-2">Discográfica</label>
 						<div class="col-sm-4">
-							<select class="form-control" id="country" wicket:id="country"></select>
+							<select class="form-control" id="company" wicket:id="company"></select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="cachet" class="control-label col-sm-2">Cachet</label>
+						<label for="year" class="control-label col-sm-2">Año</label>
 						<div class="col-sm-10">
-							<input type="number" class="form-control" id="cachet" wicket:id="cachet" placeholder="Cachet por evento">
+							<input type="number" class="form-control" id="year" wicket:id="year" placeholder="Año de edición">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="musicalGenre" class="control-label col-sm-2">Género musical</label>
+						<label for="copiesInArgentina" class="control-label col-sm-2">Copias vendidas en Argentina</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="musicalGenre" wicket:id="musicalGenre" placeholder="Género musical de la banda">
+							<input type="number" class="form-control" id="copiesInArgentina" wicket:id="copiesInArgentina" placeholder="Cantidad de copias vendidas en Argentina">
 						</div>
 					</div>
 	
@@ -42,13 +40,13 @@
 						<button type="button" class="btn btn-standard" wicket:id="cancelAction">
 							Cancelar
 						</button>
-						<input type="submit" class="btn btn-primary" value="Discos">
+						<input type="submit" class="btn btn-primary" value="Agregar">
 					</div>
 					
 				</form>
+				
 			</div>
-		</div>   <!--  /panel  -->			
-	</div>
-	
+		</div>   <!--  /panel  -->
+	</div>			
 </body>
 </html>

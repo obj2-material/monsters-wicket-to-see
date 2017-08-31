@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Agregar una banda</title>
+</head>
+<body>
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4><span wicket:id="formTitle"></span></h4>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" wicket:id="bandForm">
+					<div class="form-group">
+						<label for="name" class="control-label col-sm-2">Nombre</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="name" wicket:id="name" placeholder="Nombre de la banda">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="country" class="control-label col-sm-2">País</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="country" wicket:id="country"></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="cachet" class="control-label col-sm-2">Cachet</label>
+						<div class="col-sm-10">
+							<input type="number" class="form-control" id="cachet" wicket:id="cachet" placeholder="Cachet por evento">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="musicalGenre" class="control-label col-sm-2">Género musical</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="musicalGenre" wicket:id="musicalGenre" placeholder="Género musical de la banda">
+						</div>
+					</div>
+	
+					<div class="btn-toolbar" role="group" style="float: right">
+						<button type="button" class="btn btn-standard" wicket:id="cancelAction">
+							Cancelar
+						</button>
+						<button type="submit" class="btn btn-primary">
+							<span wicket:id="confirmButtonLabel"></span>
+						</button>
+					</div>
+					
+				</form>
+			</div>
+		</div>   <!--  /panel  -->			
+	</div>
+	
+</body>
+</html>

@@ -1,4 +1,4 @@
-package ar.edu.unq.ciu.monsters.web.bandCrud;
+package ar.edu.unq.ciu.monsters.web.bandCrud.editWithInheritance;
 
 import java.util.Comparator;
 import java.util.List;
