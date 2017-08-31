@@ -65,7 +65,7 @@ public class EditBandAlbumsPage extends WebPage {
 
 			@Override
 			public void onClick() {
-				this.setResponsePage(new EditBandInitialPage(EditBandAlbumsPage.this.controller));
+				this.setResponsePage(new AddBandInitialPage(EditBandAlbumsPage.this.controller));
 				
 			}
 		}; 

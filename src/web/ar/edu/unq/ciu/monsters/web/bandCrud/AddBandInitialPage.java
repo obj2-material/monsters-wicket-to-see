@@ -10,18 +10,18 @@ import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.CompoundPropertyModel;
 
-public class EditBandInitialPage extends WebPage {
+public class AddBandInitialPage extends WebPage {
 	private static final long serialVersionUID = 1709591341263118983L;
 	
 	private BandEditionController controller;
 	
-	public EditBandInitialPage() {
+	public AddBandInitialPage() {
 		super();
 		this.controller = new BandEditionController();
 		this.fillForm();
 	}
 	
-	public EditBandInitialPage(BandEditionController _controller) {
+	public AddBandInitialPage(BandEditionController _controller) {
 		this();
 		this.controller = _controller;
 	}
@@ -31,7 +31,7 @@ public class EditBandInitialPage extends WebPage {
 			private static final long serialVersionUID = -7380319985557184605L;
 			@Override
 			protected void onSubmit() {
-				this.setResponsePage(new EditBandAlbumsPage(EditBandInitialPage.this.controller));
+				this.setResponsePage(new EditBandAlbumsPage(AddBandInitialPage.this.controller));
 			}
 		};
 		

@@ -30,7 +30,7 @@ public class BandListPage extends WebPage {
 
 			@Override
 			public void onClick() {
-				this.setResponsePage(EditBandInitialPage.class);
+				this.setResponsePage(AddBandInitialPage.class);
 				
 			}
 		}; 

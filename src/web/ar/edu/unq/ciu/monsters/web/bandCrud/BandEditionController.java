@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unq.ciu.monsters.dominio.Banda;
-import ar.edu.unq.ciu.monsters.dominio.Discografica;
 import ar.edu.unq.ciu.monsters.dominio.Pais;
 import ar.edu.unq.ciu.monsters.store.MonstersStore;
 
