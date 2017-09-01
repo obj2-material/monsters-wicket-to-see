@@ -15,7 +15,7 @@ public class EditAlbumPage extends WebPage {
 	
 	private AlbumEditionController controller;
 	
-	public EditAlbumPage(BandEditionController _parentController) {
+	public EditAlbumPage(BandAddController _parentController) {
 		super();
 		this.controller = new AlbumEditionController(_parentController);
 		this.fillForm();

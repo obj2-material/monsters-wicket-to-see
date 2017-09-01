@@ -16,14 +16,14 @@ public class AlbumEditionController implements Serializable {
 	private Discografica company;
 	private int year;
 	private int copiesInArgentina;
-	private BandEditionController parentController;
+	private BandAddController parentController;
 	
-	public AlbumEditionController(BandEditionController _parentController) { 
+	public AlbumEditionController(BandAddController _parentController) { 
 		super();
 		this.parentController = _parentController;
 	}
 	
-	public AlbumEditionController(BandEditionController _parentController, String name, Discografica company, int year, int copiesInArgentina) {
+	public AlbumEditionController(BandAddController _parentController, String name, Discografica company, int year, int copiesInArgentina) {
 		this(_parentController);
 		this.name = name;
 		this.company = company;
@@ -54,7 +54,7 @@ public class AlbumEditionController implements Serializable {
 		this.parentController.addToAlbums(this);		
 	}
 
-	public BandEditionController getParentController() {
+	public BandAddController getParentController() {
 		return this.parentController;
 	}
 

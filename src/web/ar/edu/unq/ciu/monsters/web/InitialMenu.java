@@ -3,7 +3,7 @@ package ar.edu.unq.ciu.monsters.web;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
 
-import ar.edu.unq.ciu.monsters.web.bandCrud.BandListPage;
+import ar.edu.unq.ciu.monsters.web.bandCrud.editWithInheritance.BandListPage;
 import ar.edu.unq.ciu.monsters.web.bandPageWithAlbums.BandPageWithAlbums;
 import ar.edu.unq.ciu.monsters.web.bandsDiscsCopies.BandPageWithLinkToCopies;
 import ar.edu.unq.ciu.monsters.web.simpleBandPage.SimpleBandPage;

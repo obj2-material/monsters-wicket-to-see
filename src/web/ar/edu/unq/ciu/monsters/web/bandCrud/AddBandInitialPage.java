@@ -1,28 +1,35 @@
 package ar.edu.unq.ciu.monsters.web.bandCrud;
 
+import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 
-public class AddBandInitialPage extends EditBandMainDataPage {
-	private static final long serialVersionUID = 3828105452372618867L;
+public class AddBandInitialPage extends WebPage {
+	private static final long serialVersionUID = -7607228896939415658L;
+	
+	protected BandAddController controller;
 
-	public AddBandInitialPage() { super(); }
-
-	public AddBandInitialPage(BandEditionController _controller) {
-		super(_controller);
+	public AddBandInitialPage() { 
+		super();
+		this.controller = new BandAddController();
+		this.fillForm();
 	}
 
-	protected Form<BandEditionController> buildForm() {
-		return new Form<BandEditionController>("bandForm") {
+	public AddBandInitialPage(BandAddController _controller) {
+		super();
+		this.controller = _controller;
+		this.fillForm();
+	}
+
+	protected void fillForm() {
+		Form<BandEditionController> bandMainDataForm = new Form<BandEditionController>("bandForm") {
 			private static final long serialVersionUID = -7380319985557184605L;
 			@Override
 			protected void onSubmit() {
 				this.setResponsePage(new EditBandAlbumsPage(AddBandInitialPage.this.controller));
 			}
 		};
+		bandMainDataForm.add(new BandEditionPanel("bandFormFields", this.controller, "Discos"));
+		this.add(bandMainDataForm);
 	}
-
-	protected String getConfirmButtonLabel() { return "Discos"; } 
-	
-	protected String getFormTitle() { return "Nueva banda"; }
 
 }
