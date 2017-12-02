@@ -23,15 +23,6 @@ public class AlbumEditionController implements Serializable {
 		this.parentController = _parentController;
 	}
 	
-	public AlbumEditionController(BandAddController _parentController, String name, Discografica company, int year, int copiesInArgentina) {
-		this(_parentController);
-		this.name = name;
-		this.company = company;
-		this.year = year;
-		this.copiesInArgentina = copiesInArgentina;
-	}
-
-
 	public String getName() { return this.name; }
 	public void setName(String _name) { this.name = _name; }
 	
